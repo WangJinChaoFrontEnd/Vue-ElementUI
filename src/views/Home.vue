@@ -8,7 +8,7 @@
               </div>
               <div class="company_box">
                   <ul class="company_name">
-                    <li class="color1">河北狼腾贸易有限公司&nbsp;&nbsp;<a>账户设置</a></li>
+                    <li class="color1">河北狼腾贸易有限公司..&nbsp;&nbsp;<a>账户设置</a></li>
                   </ul>
                   <ul class="company_contact">
                     <li  class="color1">企业联系人&nbsp;&nbsp;<span class="color2">李春</span></li>

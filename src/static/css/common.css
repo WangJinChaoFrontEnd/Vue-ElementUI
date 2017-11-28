@@ -1,0 +1,359 @@
+.header_box{
+  width: 100%;
+  height: 45px;
+  background-color: #515567
+}
+.header_box li{
+  float: left;
+  line-height: 45px;
+  padding: 0 10px;
+  font-size: 14px
+}
+.header_box li a{
+  color: white
+}
+iframe{
+  border: none
+}
+.active{
+  background: #7e818f;
+}
+.jindu_box{
+  width: 90%;
+  margin:auto;
+  overflow: hidden;
+  margin-top: 20px
+}
+.content_box{
+  padding: 10px
+}
+.content_box h1{
+  font-size: 16px;
+  margin-bottom: 10px
+}
+.el-row{
+  height: 36px;
+  line-height: 36px
+}
+.grid-content-title{
+  font-size: 14px;
+  color: #666
+}
+.grid-content{
+  font-size: 14px;
+  color: #666
+}
+.el-row{
+  margin-top: 10px
+}
+.el-checkbox.is-bordered{
+border:1px solid #d8dce5
+}
+.amount{
+  background-color:#f4f4f4;
+  height: 56px;
+  line-height: 56px;
+  padding-right: 20px;
+  padding-left: 20px
+}
+.amount_n{
+color: #20a0ff;
+font-size: 20px;
+font-weight: bold;
+}
+.Recharge_time_head{
+  width: 98%;
+  height: 105px;
+  padding: 5px 1%;
+  background-color: #f7f7f7
+}
+.Rechar_start li{
+  float: left;
+}
+.Rechar_start{
+  overflow: hidden;
+  height: 37px;
+  line-height: 37px;
+  float: left;
+  margin:5px 20px;
+}
+.Rechar_start_box{
+  overflow: hidden;
+  position: relative;
+}
+.serch{
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+.Re_con h1{
+  margin: 20px 0;
+}
+.Admin_invoice ul{
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  margin-right: 8px;
+  width: 150px
+}
+.Admin_invoice ul:nth-child(2){
+  width:160px
+}
+.Admin_invoice ul:nth-child(2) li:nth-child(2){
+  width:80%
+}
+.Admin_invoice ul:nth-child(3){
+  width:200px
+}
+.Admin_invoice ul li{
+  float: left
+}
+.Admin_invoice ul li:nth-child(2){
+  width: 60%
+}
+.Admin_invoice{
+  overflow: hidden;
+}
+.score_head{
+  width: 98%;
+  height: 80px;
+  background-color: #f7f7f7;
+  line-height: 80px;
+  padding: 0 1%
+}
+.score_head ul:nth-child(1){
+  float: left
+}
+.score_head ul:nth-child(2){
+  float: right
+}
+.score_head ul:nth-child(2) li{
+  float: left;
+  margin-right: 10px
+}
+.score_head ul:nth-child(1) span{
+  font-size: 32px;
+  color: #20a0ff
+}
+.score_content{
+margin-top: 20px;
+position: relative;
+}
+.score_am{
+  width: 50%;
+  height: 216px;
+  border: 1px #eee solid;
+  margin-top: 10px;
+  overflow: hidden;
+  padding: 10px
+}
+.score_am_t{
+  overflow: hidden;
+}
+.score_am_t li{
+  float: left;
+}
+.score_am_t li:nth-child(1){
+  color: #20a0ff;
+  margin-right: 10px
+}
+.score_am_t li:nth-child(2){
+  color: #ccc;
+}
+.score_am_am{
+  text-align: center;
+  margin-top: 40px
+}
+.score_am{
+  position: relative;
+}
+.score_am_am li{
+  color:#ccc;
+  font-size: 14px
+}
+.score_am_am li:nth-child(2){
+  color:#20a0ff;
+  font-size: 26px
+}
+.score_time{
+  color:#999;
+  position: absolute;
+  left: 10px;
+  bottom: 10px
+}
+.score_icon{
+  width: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 50px 0;
+  background-color: #FFF9EE;
+  color: #999
+}
+.score_icon li{
+  line-height: 58px;
+  text-align: center
+}
+.Invoice_r h1{
+  margin: 10px;
+}
+.m-no-data{
+  background-color: #fbfbfb;
+  padding-top: 40px;
+  font-size: 16px;
+  color: #999;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.m-no-data p{
+font-size: 12px;
+margin-top: 20px
+}
+.m-no-data i{
+font-size: 36px
+}
+.Re_con_tit{
+  overflow: hidden;
+}
+.Re_con_tit h1{
+  float: left;
+}
+.Re_con_tit ul{
+  float: right
+}
+.Re_con_tit ul li{
+  float: left;
+  line-height: 60px;
+  margin-right: 20px
+}
+.inp_text_warp{
+  width: 25%;
+  float: left
+}
+.inp_text_box{
+  overflow: hidden;
+}
+.inp_text_warp li ul li{
+  float: left
+}
+.inp_text_warp li ul li:nth-child(1){
+  width: 23%;
+  line-height: 36px
+}
+.inp_text_warp li ul li:nth-child(2){
+  width: 45%
+}
+.inp_text_warp li ul{
+  overflow: hidden;
+  margin-bottom: 10px
+}
+.inp_text_box ul:nth-child(2){
+}
+/*员工管理首页*/
+.staff_home_warp{
+  width: 100%;
+  margin: auto;
+  border:solid 1px #D8DDE2;
+  height: 147px;
+  margin-top: 10px;
+}
+.staff_home_title{
+  width:100%;
+  height:33px;
+  line-height: 33px;
+  background-color:#ececec;
+  padding-left: 2%;
+  font-weight: bold
+}
+.staff_home_Survey{
+  float: left;
+}
+.staff_home_Survey li{
+  line-height: 33px;
+  margin-left: 30px;
+}
+.staff_home_Survey li span{
+  color: #999
+}
+.staff_home_but{
+  float: right;
+  margin-top: 40px;
+  margin-right: 20px;
+}
+.staff_add_warp{
+
+width: 95%;
+margin: auto
+}
+.staff_add_warp ul{
+overflow: hidden;
+margin-top:150px;
+font-size: 14px;
+}
+.staff_add_warp ul li:nth-child(1){
+  float: left
+}
+.staff_add_warp ul li:nth-child(2) {
+  float: right
+}
+.staff_infor_Import{
+  overflow: hidden;
+  height: 50px;
+  background-color: #f1f2f2;
+  margin-top: 20px;
+}
+.staff_infor_Import li{
+  float: left;
+  line-height: 50px;
+  margin-left: 20px
+}
+.staff_infor_Import li button{
+  height: 30px;
+  border-radius: 3px;
+  padding: 0;
+  font-size: 12px;
+  padding: 0 5px
+}
+.staff_ification{
+  border-bottom:solid 1px #e6e6e6;
+  height: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px
+}
+.tips_staff {
+  width: 100%;
+  height: 50px;
+  background-color: #FFFFF0;
+  border: solid 1px #F1E0AA;
+  line-height: 50px;
+  margin-bottom: 20px;
+}
+.export_file_title{
+  width:98%;
+  padding:0 1%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: solid 1px #e6e6e6
+}
+.export_file_title li:nth-child(1){
+  float: left;
+  font-size: 14px;
+  font-weight: bold
+}
+.export_file_title li:nth-child(2) {
+  float: right
+}
+.export_file_memo{
+  background-color: #f5f5f5;
+  padding: 10px
+}
+.export_file_memo dt{
+  font-weight: bold
+}
+.upload_but{
+  width: 100%;
+  height: 100px;
+  padding-top: 20px
+}
+

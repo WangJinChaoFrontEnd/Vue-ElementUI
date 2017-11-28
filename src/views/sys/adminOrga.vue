@@ -23,15 +23,15 @@
         </el-form-item>
       </el-form>
     </div>
-    <el-dialog title="选择员工" size="small" :visible.sync="dialogTableVisible">
-      <el-row>
+    <el-dialog title="选择员工" size="large" :visible.sync="dialogTableVisible">
+      <el-row style="margin-bottom:10px">
         <el-col :span="1"><div class="grid-content bg-purple">姓名</div></el-col>
         <el-col :span="3"><div class="grid-content bg-purple-light"><el-input v-model="xm"></el-input></div></el-col>
         <el-col :span="2"><div class="grid-content bg-purple" style="text-align:right">手机号:&nbsp;&nbsp;</div></el-col>
         <el-col :span="6"><div class="grid-content bg-purple-light"><el-input v-model="mobile"></el-input></div></el-col>
         <el-col :span="7"><div class="grid-content bg-purple-light">&nbsp;&nbsp;<el-button type="primary" @click="serch">搜索</el-button></div></el-col>
       </el-row>
-      <el-table ref="table" :data="gridData" @selection-change="handleSelectionChange">
+      <el-table ref="table" :data="gridData" @selection-change="handleSelectionChange" style="margin-bottom:10px">
         <el-table-column  type="selection"  width="55"></el-table-column>
         <el-table-column property="uname" label="姓名" width="150"></el-table-column>
         <el-table-column property="mobile" label="手机号" width="200"></el-table-column>

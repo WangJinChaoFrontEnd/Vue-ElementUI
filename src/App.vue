@@ -56,7 +56,6 @@ body {
   padding: 0;
   height: 100%;
   font-size: 62.5%;
-
 }
 #app{
   height: 100%
@@ -64,6 +63,36 @@ body {
 .nav{
   overflow-y:scroll;
   overflow-x:hidden;
+}
+.Rechar_start{
+  font-size: 14px
+}
+.el-col{
+  font-size: 13px
+}
+.header{
+  font-size: 14px
+}
+.staff{
+  font-size: 14px
+}
+.el-dropdown-menu__item{
+   font-size: 14px
+}
+.score_head{
+  font-size: 14px
+}
+.score_am{
+  font-size: 14px
+}
+.staff_home_warp{
+  font-size: 14px
+}
+.staff_infor_Import{
+  font-size: 14px
+}
+.butt_right li{
+  font-size: 14px
 }
 .el-submenu .el-menu-item{
   min-width: 0
@@ -83,5 +112,16 @@ min-height:28px;
 ::-webkit-scrollbar-thumb:hover {
 background-color:#bbb;
 }
-
+iframe{
+  height: 600px
+}
+.Re_con_tit ul{
+  font-size: 14px
+}
+.tips_staff{
+  font-size: 14px
+}
+.Recharge_time_head{
+  height: 60px
+}
 </style>

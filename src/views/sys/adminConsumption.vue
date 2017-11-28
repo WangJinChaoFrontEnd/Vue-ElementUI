@@ -1,47 +1,29 @@
 <template lang="html">
   <div class="">
     <div class="Recharge_time_head">
-      <div class="Rechar_start_box">
+      <div class="Rechar_start_box" style="margin-top:10px">
         <ul class="Rechar_start">
           <li>充值时间:</li>
-          <li><el-date-picker  v-model="value1"  type="date"  placeholder="选择日期"></el-date-picker></li>
-          <li>&nbsp;&nbsp;—&nbsp;&nbsp;</li>
-          <li><el-date-picker  v-model="value2"  type="date"  placeholder="选择日期"></el-date-picker></li>
-        </ul>
-        <ul class="Rechar_start">
-          <li>状态:</li>
           <li>
-            <el-select v-model="state_value" placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+            <el-date-picker
+              v-model="value1"
+              type="date"
+              placeholder="选择日期" format="yyyy-MM-dd" @change="myclick">
+            </el-date-picker>
           </li>
         </ul>
         <ul class="Rechar_start">
-          <li>充值类型:</li>
+          <li>结束时间:</li>
           <li>
-            <el-select v-model="state_value" placeholder="请选择">
-              <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-              </el-option>
-            </el-select>
+            <el-date-picker
+              v-model="value2"
+              type="date"
+              placeholder="选择日期" format="yyyy-MM-dd" @change="myclick2">
+            </el-date-picker>
           </li>
-        </ul>
-        <ul class="Rechar_start">
-          <li>完成时间:</li>
-          <li><el-date-picker  v-model="value1"  type="date"  placeholder="选择日期"></el-date-picker></li>
-          <li>&nbsp;&nbsp;—&nbsp;&nbsp;</li>
-          <li><el-date-picker  v-model="value2"  type="date"  placeholder="选择日期"></el-date-picker></li>
         </ul>
         <div class="serch">
-          <el-button type="primary"><i class="el-icon-search"></i>搜索</el-button>
+          <el-button type="primary" @click="serch"><i class="el-icon-search"></i>搜索</el-button>
         </div>
       </div>
       <div class="Re_con">
@@ -51,18 +33,22 @@
           stripe
           style="width: 100%">
           <el-table-column
-            prop="date"
-            label="日期"
+            prop="orderno"
+            label="订单号"
             width="180">
           </el-table-column>
           <el-table-column
-            prop="name"
-            label="姓名"
+            prop="pay_content"
+            label="支付内容"
             width="180">
           </el-table-column>
           <el-table-column
-            prop="address"
-            label="地址">
+            prop="pay_amount_real"
+            label="支付金额">
+          </el-table-column>
+          <el-table-column
+            prop="pay_time"
+            label="支付时间">
           </el-table-column>
         </el-table>
       </div>
@@ -77,40 +63,31 @@ export default {
       value1:'',
       value2:'',
       state_value:'',
-      options: [{
-          value: '选项1',
-          label: '黄金糕'
-        }, {
-          value: '选项2',
-          label: '双皮奶'
-        }, {
-          value: '选项3',
-          label: '蚵仔煎'
-        }, {
-          value: '选项4',
-          label: '龙须面'
-        }, {
-          value: '选项5',
-          label: '北京烤鸭'
-        }],
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
+      tableData: []
     }
+  },
+  methods:{
+    myclick(v){
+      this.value1=v;
+    },
+    myclick2(v){
+      this.value2=v;
+    },
+    serch(){
+      if(this.value1==""||this.value2==""){
+        this.$message('请输入要搜索的条件');
+      }else{
+        this.$http.post(this.getHostUrl()+'/webCorpCashStat/getCzDetail.do',{
+            begindate:this.value1,
+            enddate:this.value2
+            },{emulateJSON:true}).then(function(data){
+              this.tableData=data.body.list
+               for(var i=0;i<data.body.list.length;i++){
+                this.tableData[i].pay_amount_real=data.body.list[i].pay_amount_real/100
+              }
+            },function(error){})
+          }
+    },
   }
 }
 </script>

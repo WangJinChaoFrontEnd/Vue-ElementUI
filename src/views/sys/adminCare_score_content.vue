@@ -14,7 +14,7 @@
           <div class="score_am">
               <ul class="score_am_t">
                 <li>基本户</li>
-                <li><i class="el-icon-setting"></i></li>
+                <li></li>
               </ul>
               <ul class="score_am_am">
                 <li>账户余额</li>
@@ -29,7 +29,7 @@
           </div>
         </div>
         <!--弹出框-->
-        <el-dialog title="发放记录" :visible.sync="dialogTable1Visible" width="100%">
+        <el-dialog title="发放记录" :visible.sync="dialogTable1Visible" size="full">
           <div class="inp_text_box">
             <ul class="inp_text_warp">
               <li>

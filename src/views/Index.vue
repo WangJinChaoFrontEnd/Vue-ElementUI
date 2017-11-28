@@ -119,17 +119,6 @@ export default {
             ]
           },
           {
-            name:'应用中心',
-            index:'4',
-            child:[
-              {
-              name:'应用管理',
-              mUrl:'/sys/adminRecharge',
-              ref:'adminRecharge'
-              }
-            ]
-          },
-          {
             name:'数据中心',
             index:'5',
             child:[
@@ -142,17 +131,6 @@ export default {
               name:'员工积分数据',
               mUrl:'/sys/adminEmployeeScore',
               ref:'adminEmployeeScore'
-              }
-            ]
-          },
-          {
-            name:'员工服务平台',
-            index:'6',
-            child:[
-              {
-              name:'个人中心设置',
-              mUrl:'/sys/adminRecharge',
-              ref:'adminRecharge'
               }
             ]
           }
@@ -179,6 +157,10 @@ export default {
                   this.addTabs('关爱积分管理')
                 }else if(a=="充值"){
                   this.addTabs('充值')
+                }else if(a=="查看更多"){
+                  this.addTabs('企业积分数据')
+                }else if(a=="员工数据"){
+                  this.addTabs('员工积分数据')
                 }
            }.bind(this));
         this.$http.post(this.getHostUrl()+'/webLogin/getLoginInfo.do').then(function(data){
@@ -282,8 +264,9 @@ body{
     bottom: 0;
     background-color: #e4e8f1;
     margin-top:90px;
-    width: 180px;
+    width: 190px
 }
+
 .layout-text{
   float: left;
   color: #7bae5f;
@@ -293,10 +276,15 @@ body{
 .nav .ivu-menu-submenu{
   width: 150px
 }
-
+.el-submenu [class^="el-icon-"]{
+  margin: 0
+}
+.el-submenu__icon-arrow{
+  right:5px
+}
 .pane {
     position: absolute;
-    left: 17rem;
+    left: 19.5rem;
     top: 0;
     bottom: 0;
     right: 0;

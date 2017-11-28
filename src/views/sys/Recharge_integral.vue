@@ -44,8 +44,7 @@
       <el-row>
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title">充值账户：</div></el-col>
         <el-col :span="7"><div class="grid-content bg-purple-light">
-            <span style="color:#f00;font-size:16px">*&nbsp;&nbsp;</span>
-            <el-checkbox v-model="checked3" label="基本户" border @change="account"></el-checkbox>
+            <span style="font-size:16px">基本户</span>
         </div>
         </el-col>
       </el-row>
@@ -57,7 +56,7 @@
           </div>
         </el-col>
         <el-col :span="8">
-          <span style="color:rgb(153, 153, 153)">&nbsp;&nbsp;为了您的充值能尽快处理，请每次申请的金额对应一笔汇款金额</span>
+          <span style="color:rgb(153, 153, 153);font-size:12px">&nbsp;&nbsp;为了您的充值能尽快处理，请每次申请的金额对应一笔汇款金额</span>
         </el-col>
       </el-row>
       <el-row>
@@ -83,7 +82,6 @@
       <el-row class="amount">
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title"><h4>开票金额:</h4></div></el-col>
         <el-col :span="15"><div class="grid-content bg-purple-light amount_n">{{Recharge_amount_val}}.00</div></el-col>
-        <el-col :span="6"><div class="grid-content" style="text-align:right"><a>查看销售方信息</a></div></el-col>
       </el-row>
       <el-row>
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title">发票类型:</div></el-col>
@@ -274,11 +272,9 @@ export default {
       postcode:'',
       listType:[],
       address_default:false,
-      checked3: false,
       textarea3: '',
       radio3:'',
       input: '',
-      label_value:'',
       address_defaultNum:0,
       Recharge_amount:'',
       Recharge_amount_val:'',
@@ -440,9 +436,6 @@ export default {
     invoice_c(data){
       this.content=data
     },
-    account(label){
-      this.label_value=label.srcElement.defaultValue
-    },
     back(){
       this.model1=true
       this.model2=false
@@ -451,7 +444,7 @@ export default {
     next_o(){
       this.Next_Num=1
       if(this.Next_Num==1){
-        if(this.label_value==""||this.Recharge_amount==""){
+        if(this.Recharge_amount==""){
           this.$message({message: '请选择充值账户和充值金额'});
         }else{
           this.model1=false

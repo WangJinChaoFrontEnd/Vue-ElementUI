@@ -11,10 +11,6 @@
             <el-table-column property="invoiceType" label="发票类型"></el-table-column>
             <el-table-column property="taxType" label="是否一般纳税人"></el-table-column>
        </el-table>
-      <div class="m-no-data" v-if="invoice_list.length<1">
-          <i class="el-icon-date"></i>
-          <p>贵公司暂无开票记录</p>
-      </div>
 </div>
 </template>
 

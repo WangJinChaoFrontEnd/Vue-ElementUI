@@ -5,7 +5,7 @@
           <li :class="{active: isActiveTwo}" @click="CZ_url"><a>员工信息管理</a></li>
           <li :class="{active: isActiveThr}" @click="SZ_url"><a>设置</a></li>
         </ul>
-        <iframe :src="this.getHomeUrl()+'/?#'+url" width="100%" height="600"></iframe>
+        <iframe :src="'/?#'+url" width="100%" height="600" scrolling="no"></iframe>
   </div>
 </template>
 

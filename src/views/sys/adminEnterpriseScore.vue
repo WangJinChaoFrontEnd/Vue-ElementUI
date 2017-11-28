@@ -14,10 +14,10 @@
         <li><h1>关爱积分充值与积分统计</h1></li>
       </ul>
       <div id="myChart5" :style="{width: '500px', height: '500px'}"></div> 
-      <el-dialog title="充值明细" :visible.sync="dialogTableVisible">
+      <el-dialog title="充值明细" :visible.sync="dialogTableVisible" size="large">
         <el-table :data="gridData">
-          <el-table-column property="orderno" label="订单号" width="150"></el-table-column>
-          <el-table-column property="pay_content" label="支付内容" width="200"></el-table-column>
+          <el-table-column property="orderno" label="订单号"></el-table-column>
+          <el-table-column property="pay_content" label="支付内容"></el-table-column>
           <el-table-column property="pay_amount_real" label="支付金额"></el-table-column>
           <el-table-column property="pay_time" label="支付时间"></el-table-column>
         </el-table>

@@ -50,11 +50,11 @@
                         <li class="cz" v-if="amount<0">当前可用余额不足，请先充值&nbsp;&nbsp;<span><Icon type="social-usd" color="white" size="30"></Icon></span></li>
                       </ul>
                       <ul class="company_name">
-                        <li  class="color1 Assets_title" style="font-size:12px;line-height:20px"><span class="color2">企业充值与发放积分数据<br/><a>查看更多</a></span></li>
-                        <li><div id="myChart1" :style="{width: '340px', height: '300px'}"></div></li>
+                        <li  class="color1 Assets_title" style="font-size:12px;line-height:20px"><span class="color2">企业充值与发放积分数据<br/><a @click="see_more">查看更多</a></span></li>
+                        <li><div id="myChart1" :style="{width: '300px', height: '300px'}"></div></li>
                       </ul>
                       <ul class="company_name">
-                        <li  class="color1 Assets_title" style="font-size:12px;line-height:20px"><span class="color2">员工消费金额<br/><a>查看更多</a></span></li>
+                        <li  class="color1 Assets_title" style="font-size:12px;line-height:20px"><span class="color2">员工消费金额<br/><a @click="staff_more">查看更多</a></span></li>
                         <li><div id="myChart2" :style="{width: '340px', height: '300px'}"></div></li>
                       </ul>
                   </div>
@@ -94,6 +94,12 @@ export default {
     CZ_Re(){
       eventBus.$emit("a-msg", '充值');
     },
+    see_more(){
+      eventBus.$emit("a-msg", '查看更多');
+    },
+    staff_more(){
+      eventBus.$emit("a-msg", '员工数据');
+    },
     drawLine(){
         // 基于准备好的dom，初始化echarts实例
         let myChart = this.$echarts.init(document.getElementById('myChart'))
@@ -110,7 +116,7 @@ export default {
               }
           },
           grid: {
-              left: '10%',
+              left: '5%',
               right: '4%',
               bottom: '20%',
               top:'10%',
@@ -230,6 +236,9 @@ export default {
 <style lang="css">
 .color1{
   color: #666
+}
+.company_box{
+  font-size: 14px
 }
 .color2{
   color: #999;

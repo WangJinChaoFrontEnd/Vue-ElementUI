@@ -31,7 +31,7 @@
                     </form>
                   </div>
               </div>
-              <div class="footer">中智关爱通（上海）科技股份有限公司 Guanaitong.com 版权所有|各商标由其各自所有者持有|沪ICP备09008249号</div>
+              
         </div>
     </div>
 </template>
@@ -190,10 +190,10 @@ margin: 0;
 }
 .content_box{
   width: 580px;
-  height: 450px;
+  height: 430px;
   background-color: white;
   position: absolute;
-  top: 48%;
+  top: 60%;
   right: 10%;
   margin-top: -250px;
   margin-left: -450px;
@@ -292,7 +292,7 @@ margin: 0;
   background-color: #7bae5f;
   border: none;
   border-radius: 8px;
-  margin-top: 49px;
+  margin-top: 20px;
   color: white;
   font-size: 22px
 }

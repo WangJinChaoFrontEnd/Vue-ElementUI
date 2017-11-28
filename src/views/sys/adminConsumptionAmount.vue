@@ -35,7 +35,7 @@
       </template>
     </el-table-column>
       </el-table>
-        <el-dialog title="收货地址" :visible.sync="dialogTableVisible" width="800">
+        <el-dialog title="收货地址" :visible.sync="dialogTableVisible" size="large">
           <el-table :data="gridData">
             <el-table-column property="id" label="id"></el-table-column>
             <el-table-column property="orderno" label="订单号"></el-table-column>

@@ -226,6 +226,7 @@ export default {
         this.bank_name=""
         this.bank_account=""
         this.EditVisible=""
+        this.EditVisible=false
       },
       handleEdit(index,row){
         this.invoiceId=this.tableData[index].id

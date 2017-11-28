@@ -32,9 +32,11 @@
           <td>{{list.memo}}</td>
         </tr>
       </table>
-      <el-button @click="Edit">修改</el-button>
-      <el-button @click="del">删除</el-button>
-      <a @click="back"><<返回上一页</a>
+        <div style="margin-top:20px">
+          <el-button @click="Edit">修改</el-button>
+          <el-button @click="del">删除</el-button>
+          <a @click="back"><<返回上一页</a>
+        </div>
   </div>
 </template>
 <script>

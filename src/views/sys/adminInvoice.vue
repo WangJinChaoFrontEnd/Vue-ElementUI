@@ -4,7 +4,7 @@
           <li :class="{active: isActive}" @click="JF_url"><a>开票记录</a></li>
           <li :class="{active: isActiveTwo}" @click="CZ_url"><a>开票设置</a></li>
         </ul>
-        <iframe :src="this.getHomeUrl()+'/?#'+url" width="100%" height="600"></iframe>
+        <iframe :src="'/?#'+url" width="100%" height="600"  scrolling="no"></iframe>
   </div>
 </template>
 

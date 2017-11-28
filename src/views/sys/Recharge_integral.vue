@@ -5,7 +5,7 @@
         <el-step title="填写充值信息"></el-step>
         <el-step title="填写开票信息"></el-step>
       </el-steps>
-    </div>dasdas
+    </div>
     <!--第一步start-->
     <div class="content_box" v-show='model1'>
       <h1>充值信息</h1>

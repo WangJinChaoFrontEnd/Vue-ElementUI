@@ -6,7 +6,7 @@
           <li :class="{active: isActiveThr}" @click="SZ_url"><a>设置</a></li>
         </ul>
         <iframe :src="'/?#'+url" width="100%" height="600" scrolling="no" id="FrameID"></iframe>
-  </div><!--测试-->
+  </div><!--测试123-->
 </template>
 
 <script>

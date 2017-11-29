@@ -1,10 +1,6 @@
 <template>
   <div>
-    <el-tabs v-model="editableTabsValue" type="card" >
-      <el-tab-pane :key="item.name" v-for="(item, index) in editableTabs" :label="item.title" :name="item.name">
-      <component :is="item.components"></component>
-      </el-tab-pane>
-    </el-tabs>
+    <iframe :src="'/?#'+'/sys/adminConsumptionAmount'" width="100%" height="600px" scrolling="no"></iframe>
   </div>
 </template>
 <script>

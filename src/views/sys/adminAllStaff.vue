@@ -11,7 +11,7 @@
         <el-form-item>
           <el-button type="primary" @click="onSubmit">查询</el-button>
         </el-form-item>
-      </el-form>
+      </el-form><!---->
       <el-table
             :data="tableData"
             style="width: 100%">
@@ -71,6 +71,7 @@
     },
    created(){
      //this.$router.push({path: '/sys/adminEditStaffForm', query: {selected: '5'}});
+     this.onSubmit()
    },
     methods: {
       onSubmit() {

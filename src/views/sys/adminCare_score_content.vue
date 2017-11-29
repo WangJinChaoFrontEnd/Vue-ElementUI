@@ -112,8 +112,19 @@ export default {
       this.balance=data.body.amount
       },function(error){
       })
+      this.serch()
   },
   methods:{
+    getDay(){
+      var now=new Date()
+      var y=now.getFullYear()
+      var m=now.getMonth()+1
+      var d=now.getDate()
+      m=m<10?"0"+m:m
+      d=d<10?"0"+d:d
+      this.Record_End_time=y+"-"+m+"-"+d
+      this.Record_begin_time=y+'-'+m+'-'+"01";
+    },
     GiveIntegral(){
       this.$router.push({path:'/sys/adminOrga',query:{}})
     },
@@ -124,6 +135,7 @@ export default {
       this.Record_End_time=data
     },
   serch(){
+     this.getDay()
      this.$http.post(this.getHostUrl()+'/webCash/getCashDetail.do',{
         begindate:this.Record_begin_time,
         enddate:this.Record_End_time,

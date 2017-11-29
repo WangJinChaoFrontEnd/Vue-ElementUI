@@ -35,7 +35,7 @@
         <div style="margin-top:20px">
           <el-button @click="Edit">修改</el-button>
           <el-button @click="del">删除</el-button>
-          <a @click="back"><<返回上一页</a>
+          <a @click="back" style="font-size:14px"><<返回上一页</a>
         </div>
   </div>
 </template>

@@ -16,7 +16,7 @@
                     <li  class="color1">平台名称&nbsp;&nbsp;<span class="color2">员工关爱平台</span></li>
                   </ul>
               </div>
-            </div>
+            </div><!--cimmit-->
             <div class="Personnel_matters">
               <div class="title_box">
                 <div class="title_zs title_zs1"></div>

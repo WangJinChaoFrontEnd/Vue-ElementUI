@@ -29,25 +29,45 @@ window.eventBus = new Vue()
 window.eventAdd = new Vue()
 Vue.prototype.HOST = '/qfb';
 Vue.http.interceptors.push((request, next) => {
-    if(window.localStorage.getItem("token")==null||window.localStorage.getItem("token")==""){
-      if(request.url.indexOf('/adminLogin/login.do')<0&&request.url.indexOf('common/getWebToken.do')<0){
-        self.location.href="http://localhost:8080/?#/Login";
-        return;
-      }
+  if (window.localStorage.getItem("token")==null||window.localStorage.getItem("token")=="") {
+    if (request.url.indexOf('/adminLogin/login.do') < 0 && request.url.indexOf('common/getWebToken.do') < 0) {
+      self.location.href = "http://localhost:8080/?#/Login";
+      return;
     }
-    Vue.http.headers.common['USER-TOKEN']=window.localStorage.getItem("token");
-     myhelp.$emit('toggleLoading', true)
-    next((response) => {
-        myhelp.$emit('toggleLoading', false);
-        if(response.ok && response.body.timeout==1){
-          self.location.href="http://localhost:8080/?#/Login";
-        }
-        if(!response.ok){
-            myhelp.$emit('toggleErrDialog',true,response.status);
-        }
-        return response
-    });
+  }
+  Vue.http.headers.common['USER-TOKEN'] = window.localStorage.getItem("token");
+  myhelp.$emit('toggleLoading', true)
+  next((response) => {
+    myhelp.$emit('toggleLoading', false);
+    if (response.ok && response.body.timeout == 1) {
+      self.location.href = "http://localhost:8080/?#/Login";
+    }
+    if (!response.ok) {
+      myhelp.$emit('toggleErrDialog', true, response.status);
+    }
+    return response
+  });
 });
+// Vue.http.interceptors.push((request, next) => {
+//     if(window.localStorage.getItem("token")==null||window.localStorage.getItem("token")==""){
+//       if(request.url.indexOf('/adminLogin/login.do')<0&&request.url.indexOf('common/getWebToken.do')<0){
+//         self.location.href="http://localhost:8080/?#/Login";
+//         return;
+//       }
+//     }
+//     Vue.http.headers.common['USER-TOKEN']=window.localStorage.getItem("token");
+//      myhelp.$emit('toggleLoading', true)
+//     next((response) => {
+//         myhelp.$emit('toggleLoading', false);
+//         if(response.ok && response.body.timeout==1){
+//           self.location.href="http://localhost:8080/?#/Login";
+//         }
+//         if(!response.ok){
+//             myhelp.$emit('toggleErrDialog',true,response.status);
+//         }
+//         return response
+//     });
+// });
 router.beforeEach(function (to, from, next) {
   iView.LoadingBar.start();
   next();

@@ -71,6 +71,7 @@
     },
    created(){
      //this.$router.push({path: '/sys/adminEditStaffForm', query: {selected: '5'}});
+     this.onSubmit()
    },
     methods: {
       onSubmit() {

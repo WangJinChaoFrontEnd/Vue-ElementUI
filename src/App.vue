@@ -113,7 +113,7 @@ min-height:28px;
 background-color:#bbb;
 }
 iframe{
-  height: 600px
+  height: 900px
 }
 .Re_con_tit ul{
   font-size: 14px
@@ -123,5 +123,11 @@ iframe{
 }
 .Recharge_time_head{
   height: 60px
+}
+.export_file_memo{
+  font-size: 14px
+}
+.export_file_title li:nth-child(2){
+  font-size: 14px
 }
 </style>

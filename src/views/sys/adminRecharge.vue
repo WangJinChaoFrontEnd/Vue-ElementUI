@@ -17,6 +17,13 @@ export default {
       isActiveTwo:false
     }
   },
+  mounted(){
+    eventAdd.$on("a-ok", function (a) {
+                if(a=='充值成功'){
+                  console.log("dsad")
+                }
+           }.bind(this));
+  },
   methods:{
     JF_url:function(){
       this.url='/sys/Recharge_integral'

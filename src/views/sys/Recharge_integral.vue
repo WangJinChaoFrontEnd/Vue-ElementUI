@@ -6,7 +6,7 @@
         <el-step title="填写开票信息"></el-step>
       </el-steps>
     </div>
-    <!--第一步start-->
+    <!--第一步start123-->
     <div class="content_box" v-show='model1'>
       <h1>充值信息</h1>
       <el-row>
@@ -24,17 +24,17 @@
       </el-row>
       <el-row>
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title">收款方信息:</div></el-col>
-        <el-col :span="7"><div class="grid-content bg-purple-light">公司：河北狼腾贸易有限公司</div></el-col>
+        <el-col :span="7"><div class="grid-content bg-purple-light">公司：{{sName}}</div></el-col>
         <el-col :span="11"><div class="grid-content bg-purple">电话：021-34014622</div></el-col>
       </el-row>
       <el-row>
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title">&nbsp;</div></el-col>
-        <el-col :span="7"><div class="grid-content bg-purple-light">公司：河北狼腾贸易有限公司</div></el-col>
+        <el-col :span="7"><div class="grid-content bg-purple-light">公司：{{sName}}</div></el-col>
         <el-col :span="11"><div class="grid-content bg-purple">电话：021-34014622</div></el-col>
       </el-row>
       <el-row>
         <el-col :span="3"><div class="grid-content bg-purple grid-content-title">&nbsp;</div></el-col>
-        <el-col :span="7"><div class="grid-content bg-purple-light">公司：河北狼腾贸易有限公司</div></el-col>
+        <el-col :span="7"><div class="grid-content bg-purple-light">公司：{{sName}}</div></el-col>
         <el-col :span="11"><div class="grid-content bg-purple">电话：021-34014622</div></el-col>
       </el-row>
       <el-row>
@@ -267,6 +267,7 @@ export default {
       formLabelWidth: '120px',
       active:0,
       address:'',
+      sName:'',
       contact:'',
       contact_mobile:'',
       postcode:'',
@@ -297,6 +298,10 @@ export default {
     }
   },
   created(){
+    this.$http.post(this.getHostUrl()+'/webLogin/getLoginInfo.do').then(function(data){
+      this.sName=data.body.data.sName
+      },function(error){
+      });
     this.$http.post(this.getHostUrl()+'/api/common/getSysCode.do').then(function(data){
       var codelist=eval(data.body.data);
       this.listType=this.getCodeArray(codelist,'TAXCONTENT_TYPE');
@@ -459,8 +464,8 @@ export default {
       if(this.Next_Num==2){
         if(!this.Recharge_amount_val==""&&!this.invoiceId==""&&!this.addressId==""){
           this.$http.post(this.getHostUrl()+'/webCash/addCashApply.do',{
-          amount:this.Recharge_amount_val,
-          amountreal:this.Recharge_amount_val,
+          amount:this.Recharge_amount_val*100,
+          amountreal:this.Recharge_amount_val*100,
           content:'充值',
           orderno:new Date().getTime(),
           invoiceId:this.invoiceId,
@@ -470,6 +475,8 @@ export default {
           },{emulateJSON:true}).then(function(data){
             this.$message({message: '充值成功'});
             this.active=2
+            window.location.href="/?#/sys/adminConsumption"
+            eventAdd.$emit("a-ok", '充值成功');
           },function(error){
           })
         }else{

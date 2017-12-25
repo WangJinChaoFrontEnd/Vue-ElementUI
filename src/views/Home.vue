@@ -8,15 +8,15 @@
               </div>
               <div class="company_box">
                   <ul class="company_name">
-                    <li class="color1">河北狼腾贸易有限公司..&nbsp;&nbsp;<a>账户设置</a></li>
+                    <li class="color1">{{sName}}&nbsp;&nbsp;<a @click="editPass">修改密码</a></li>
                   </ul>
                   <ul class="company_contact">
-                    <li  class="color1">企业联系人&nbsp;&nbsp;<span class="color2">李春</span></li>
-                    <li  class="color1">企业用户名&nbsp;&nbsp;<span class="color2">河北狼腾贸易有限公司</span></li>
+                    <li  class="color1">企业联系人&nbsp;&nbsp;<span class="color2">{{uName}}</span></li>
+                    <li  class="color1">企业名称&nbsp;&nbsp;<span class="color2">{{sName}}</span></li>
                     <li  class="color1">平台名称&nbsp;&nbsp;<span class="color2">员工关爱平台</span></li>
                   </ul>
               </div>
-            </div>
+            </div><!---->
             <div class="Personnel_matters">
               <div class="title_box">
                 <div class="title_zs title_zs1"></div>
@@ -38,6 +38,20 @@
               <li><Icon type="ios-bell-outline" color="white" size="60"></Icon></br><span>员工通知</span></li>
             </ul>
         </div>
+        <el-dialog title="管理"  :visible.sync="dialogAdminVisible">
+                 <Form  label-position="top">
+                      <FormItem label="原密码">
+                          <Input v-model="oldPass" type="password"></Input>
+                      </FormItem>
+                      <FormItem label="新密码">
+                          <Input v-model="newPass" type="password"></Input>
+                      </FormItem>
+                </Form>
+              <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogAdminVisible = false">取 消</el-button>
+                <el-button type="primary" @click="ok_pass">确 定</el-button>
+              </div>
+            </el-dialog>
         <div class="enterprise_box">
             <div class="enterprise Assets">
               <div class="title_box">
@@ -76,10 +90,44 @@ export default {
       chargeCount:0,
       castCount:0,
       amount:0,
+      oldPass:'',
+      newPass:'',
+      dialogAdminVisible:false,
+      uName:'',
+      sName:''
     }
   },
 
   methods: {
+    editPass(){
+      this.dialogAdminVisible=true
+    },
+    ok_pass(){
+      if(!this.oldPass.length<6&&!this.newPass.length<6){
+        this.$http.post(this.getHostUrl()+'/webLogin/chgPwd.do',{
+          oldpwd:this.oldPass,
+          newpwd:this.newPass
+        },{emulateJSON:true}).then(function(data){
+          if(data.body.code==0){
+            this.dialogAdminVisible=false
+            this.$message({
+            message: '恭喜你，修改密码成功',
+            type: 'success'
+          });
+          }else{
+            this.$message({
+              message: '请输入正确的密码',
+              type: 'warning'
+            });
+          }
+        },function(error){})
+      }else{
+        this.$message({
+          message: '密码长度不能小于6位',
+          type: 'warning'
+        });
+      }
+    },
     send(){
       this.$store.commit('newAuthor','1')
       eventBus.$emit("a-msg", '员工信息管理');
@@ -230,6 +278,11 @@ export default {
           this.drawLine()
      },function(error){
      });
+     this.$http.post(this.getHostUrl()+'/webLogin/getLoginInfo.do').then(function(data){
+       console.log(data)
+       this.uName=data.body.data.uName
+       this.sName=data.body.data.sName
+     },function(ewrror){})
   },
 }
 </script>

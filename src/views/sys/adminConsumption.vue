@@ -66,6 +66,9 @@ export default {
       tableData: []
     }
   },
+  mounted(){
+    this.serch()
+  },
   methods:{
     myclick(v){
       this.value1=v;
@@ -73,7 +76,18 @@ export default {
     myclick2(v){
       this.value2=v;
     },
+    getDay(){
+      var now=new Date()
+      var y=now.getFullYear()
+      var m=now.getMonth()+1
+      var d=now.getDate()
+      m=m<10?"0"+m:m
+      d=d<10?"0"+d:d
+      this.value2=y+"-"+m+"-"+d
+      this.value1=y+'-'+m+'-'+"01";
+    },
     serch(){
+      this.getDay()
       if(this.value1==""||this.value2==""){
         this.$message('请输入要搜索的条件');
       }else{

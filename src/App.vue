@@ -9,7 +9,7 @@ import help from './help'
 
 export default {
   name: 'app',
-
+  /**/
   created() {
         help.$on('toggleLoading', (show) => {
                 if(show){

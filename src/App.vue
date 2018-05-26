@@ -9,7 +9,7 @@ import help from './help'
 
 export default {
   name: 'app',
-  /**/
+  /*地址修改*/
   created() {
         help.$on('toggleLoading', (show) => {
                 if(show){

@@ -2,11 +2,11 @@ export default {
    install(Vue,options)
   {
     Vue.prototype.getHostUrl = function () {
-      var hostUrl="http://192.168.0.200:8080/qfb";
+      var hostUrl="";
       return hostUrl;
     },
     Vue.prototype.getHomeUrl = function () {
-      var hostUrl="http://localhost:8080";
+      var hostUrl="";
       return hostUrl;
     },
       Vue.prototype.getHomeNum = function () {
